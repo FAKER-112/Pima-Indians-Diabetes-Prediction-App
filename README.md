@@ -18,8 +18,8 @@ This is a web application that predicts whether a patient has diabetes based on 
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/FAKER-112/Pima-Indians-Diabetes-Prediction-App.git
+    cd Pima-Indians-Diabetes-Prediction-App
     ```
 
 2.  **Create and activate a virtual environment (optional but recommended):**
