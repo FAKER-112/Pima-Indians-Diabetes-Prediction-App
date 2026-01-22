@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; 
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #e2e3e5;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Diabetes Prediction Check</h1>
+
+    <form method="POST" action="/">
+        <div class="form-group">
+            <label for="Pregnancies">Pregnancies</label>
+            <input type="number" id="Pregnancies" name="Pregnancies" required min="0" value="0">
+        </div>
+        <div class="form-group">
+            <label for="Glucose">Glucose</label>
+            <input type="number" id="Glucose" name="Glucose" required step="0.1" min="0">
+        </div>
+        <div class="form-group">
+            <label for="BloodPressure">Blood Pressure</label>
+            <input type="number" id="BloodPressure" name="BloodPressure" required step="0.1" min="0">
+        </div>
+        <div class="form-group">
+            <label for="SkinThickness">Skin Thickness</label>
+            <input type="number" id="SkinThickness" name="SkinThickness" required step="0.1" min="0">
+        </div>
+        <div class="form-group">
+            <label for="Insulin">Insulin</label>
+            <input type="number" id="Insulin" name="Insulin" required step="0.1" min="0">
+        </div>
+        <div class="form-group">
+            <label for="BMI">BMI</label>
+            <input type="number" id="BMI" name="BMI" required step="0.1" min="0">
+        </div>
+        <div class="form-group">
+            <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+            <input type="number" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" required step="0.001" min="0">
+        </div>
+        <div class="form-group">
+            <label for="Age">Age</label>
+            <input type="number" id="Age" name="Age" required min="0">
+        </div>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+    {% endif %}
+
+</body>
+</html>
